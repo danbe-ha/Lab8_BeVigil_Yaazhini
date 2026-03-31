@@ -1,0 +1,11 @@
+﻿ID,Source,Élément,Preuve,Confiance,Sévérité,Impact,Recommandation,Référence OWASP,Statut
+FIND-001,BeVigil+Yaazhini,Insecure HTTP Communication,APICreds2Activity.java / BeVigil Endpoints,Forte,High,Interception de données sensibles (MITM),Utiliser HTTPS/TLS systématiquement,,Confirmé
+FIND-002,Yaazhini,Android Debuggable Enabled,AndroidManifest.xml:debuggable=true,Forte,Medium,Facilite le reverse-engineering et l'accès runtime,Désactiver le flag debuggable en production,,Confirmé
+FIND-003,Yaazhini,AllowBackup Enabled,AndroidManifest.xml:allowBackup=true,Forte,Medium,Extraction de données via ADB sans root,Définir allowBackup sur false,,Confirmé
+FIND-004,Yaazhini,Improper Content Provider Export,Manifest:exported=true,Moyenne,Medium,Fuite de données vers d'autres apps malveillantes,Restreindre l'accès ou définir exported=false,,Confirmé
+FIND-005,BeVigil+Yaazhini,Hardcoded Secrets/API Keys,APICreds2Activity.java / BeVigil Secrets,Moyenne,Low,Compromission de services tiers,Utiliser Android Keystore ou Vault,,Confirmé
+FIND-006,Yaazhini,JavaScript in WebView,Vulnerabilities section:Webview,Moyenne,Low,Exposition aux attaques XSS locales,Désactiver JS si non nécessaire,,Confirmé
+FIND-007,BeVigil,S3 Buckets Exposure,BeVigil Cloud Scan,Forte,Info,RAS - Aucun bucket public détecté,Continuer la surveillance des assets cloud,,RAS
+FIND-008,Yaazhini,Firebase Database URL,Strings analysis,Faible,Info,RAS - Aucune instance Firebase mal configurée,Vérifier les règles de sécurité Firebase,,RAS
+FIND-009,BeVigil,Email Leaks,BeVigil Metadata,Moyenne,Info,RAS - Aucun email de développeur exposé,Maintenir l'obfuscation des métadonnées,,RAS
+FIND-010,Yaazhini,Hardcoded Passwords,InsecureStorageActivity.java,Forte,High,Accès total aux données utilisateur locales,Chiffrer les données sensibles (AES/RSA),,Confirmé
